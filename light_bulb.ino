@@ -10,7 +10,7 @@
 #include <Hash.h>
 ESP8266WiFiMulti WiFiMulti;
 SocketIOclient socketIO;
-IPAddress serverIP(192, 168, 1, 7);
+IPAddress serverIP(0, 0, 0, 0);
 uint16_t serverPort = 3000;
 String statusData = "";
 uint8_t relay = D1;
@@ -83,7 +83,7 @@ void setup() {
   if (WiFi.getMode() & WIFI_AP) {
     WiFi.softAPdisconnect(true);
   }
-  WiFiMulti.addAP("Meesuk_2.4G", "51552105315");
+  WiFiMulti.addAP("", "");
   while (WiFiMulti.run() != WL_CONNECTED) {
     Serial.print(".");
     delay(100);
